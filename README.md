@@ -14,5 +14,7 @@ sử dụng post man để demo
 
 chạy sever bằng lệnh npm start hoặc node mon
 
+CẤU HÌNH DATABASE: Xem trong file model/knex.js
+
 
 
