@@ -7,7 +7,7 @@ const singUpService = require('./singUpService.js');
 exports.saveUserInfo = async (req, res, next) => {
     try {
         const userName = req.body.userName;
-        const password = bcrypt.hashSync(req.body.password, '120');
+        const password = await bcrypt.hashSync(req.body.password, 10);
         const email = req.body.email;
         const phone = req.body.phone;
         const address = req.body.address;
@@ -22,7 +22,7 @@ exports.saveUserInfo = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.err(error);
+        console.error(error);
         throw error;
     }
 }

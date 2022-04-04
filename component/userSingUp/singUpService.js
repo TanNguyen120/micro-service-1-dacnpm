@@ -6,7 +6,7 @@ const model = require("../../models/knex");
 exports.getUser = async (userName, password, email, phone, address) => {
     try {
         const result = await model.knexObj('user').insert({
-            username: userName,
+            name: userName,
             password: password,
             email: email,
             phone: phone,
@@ -14,7 +14,7 @@ exports.getUser = async (userName, password, email, phone, address) => {
         });
         return result;
     } catch (error) {
-        console.err(error);
+        console.error(error);
         throw error;
     }
 }

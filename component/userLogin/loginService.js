@@ -1,11 +1,13 @@
 const model = require("../../models/knex");
+const bcrypt = require('bcrypt');
+
 
 
 module.exports.compareUserInfo = async (userName, password) => {
     try {
         // tìm user có user name trong data base
         const result = await model.knexObj('user').where({
-            username: userName,
+            name: userName,
         });
         if (result.length > 0) {
             // sử dụng bcrypt để compare password
@@ -19,7 +21,7 @@ module.exports.compareUserInfo = async (userName, password) => {
             return false;
         }
     } catch (error) {
-        console.err(error);
+        console.error(error);
         throw error;
     }
 }

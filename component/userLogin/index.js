@@ -3,7 +3,7 @@ const req = require('express/lib/request');
 const router = express.Router();
 const logInController = require('./loginController');
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     res.json({ message: 'hello' }
     );
 })

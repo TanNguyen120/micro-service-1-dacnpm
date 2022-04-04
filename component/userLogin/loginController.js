@@ -1,5 +1,4 @@
 const logInService = require('./loginService');
-const bcrypt = require('bcrypt');
 
 exports.login = async (req, res, next) => {
     try {
@@ -16,7 +15,7 @@ exports.login = async (req, res, next) => {
             });
         }
     } catch (error) {
-        console.err(error);
+        console.error(error);
         throw error;
     }
 }
